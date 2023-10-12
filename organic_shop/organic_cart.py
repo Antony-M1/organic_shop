@@ -11,7 +11,8 @@ from frappe.contacts.doctype.address.address import get_address_display
 
 from frappe.utils.nestedset import get_root_of
 from erpnext.accounts.utils import get_account_name
-from erpnext.utilities.product import get_qty_in_stock
+from erpnext.stock.utils import get_stock_balance as get_qty_in_stock
+# from erpnext.utilities.product import get_qty_in_stock
 from frappe.contacts.doctype.contact.contact import get_contact_name
 import json
 
