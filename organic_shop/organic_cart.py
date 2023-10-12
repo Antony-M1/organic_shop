@@ -7,7 +7,7 @@ from frappe import throw, _
 import frappe.defaults
 from frappe.utils import cint, flt, get_fullname, cstr
 from frappe.contacts.doctype.address.address import get_address_display
-from erpnext.shopping_cart.doctype.shopping_cart_settings.shopping_cart_settings import get_shopping_cart_settings
+# from erpnext.shopping_cart.doctype.shopping_cart_settings.shopping_cart_settings import get_shopping_cart_settings
 
 from frappe.utils.nestedset import get_root_of
 from erpnext.accounts.utils import get_account_name
@@ -322,7 +322,7 @@ def _get_cart_quotation(party=None):
 		company = frappe.db.get_value("Shopping Cart Settings", None, ["company"])
 		qdoc = frappe.get_doc({
 			"doctype": "Quotation",
-			"naming_series": get_shopping_cart_settings().quotation_series or "QTN-CART-",
+			# "naming_series": get_shopping_cart_settings().quotation_series or "QTN-CART-",
 			"quotation_to": party.doctype,
 			"company": company,
 			"order_type": "Shopping Cart",
@@ -469,7 +469,7 @@ def get_party(user=None):
 		customer.update({
 			"customer_name": fullname,
 			"customer_type": "Individual",
-			"customer_group": get_shopping_cart_settings().default_customer_group,
+			# "customer_group": get_shopping_cart_settings().default_customer_group,
 			"territory": get_root_of("Territory")
 		})
 
