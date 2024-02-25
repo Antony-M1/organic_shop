@@ -57,3 +57,10 @@ def wishlist_content():
 	http_status_code=200
 	response = get_response_wishlist(path, http_status_code)
 	return str(response.data, "utf-8")
+
+
+@frappe.whitelist(allow_guest=True)
+def get_item_group_list():
+	return frappe.get_all('Item Group',  filters={
+        'show_in_website': 1
+    }, fields=['name', 'image', 'route'])
