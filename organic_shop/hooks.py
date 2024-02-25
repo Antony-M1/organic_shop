@@ -20,7 +20,7 @@ app_license = "MIT"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/organic_shop/css/organic_shop.css"
-web_include_css = "/app-assets/css/theme.css"
+# web_include_css = "/app-assets/css/theme.css"
 # web_include_js = "/assets/organic_shop/js/organic_shop.js"
 
 web_include_js = "/app-assets/js/plugin/jquery-2.2.4.min.js"
@@ -136,4 +136,3 @@ web_include_js = "/app-assets/js/plugin/jquery.subscribe-better.min.js"
 # override_doctype_dashboards = {
 # 	"Task": "organic_shop.task.get_dashboard_data"
 # }
-
