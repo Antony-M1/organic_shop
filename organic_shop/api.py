@@ -5,7 +5,6 @@ from frappe.website.page_renderers.not_found_page import NotFoundPage
 from frappe.website.page_renderers.not_permitted_page import NotPermittedPage
 from frappe.website.page_renderers.redirect_page import RedirectPage
 from frappe.website.path_resolver import PathResolver
-from erpnext.stock.doctype.repost_item_valuation.repost_item_valuation import repost_entries
 
 @frappe.whitelist(allow_guest = True)
 def get_list_custom(doctype, fields=None, filters=None, order_by=None,
@@ -24,7 +23,6 @@ def get_list_custom(doctype, fields=None, filters=None, order_by=None,
 
 @frappe.whitelist(allow_guest=True)
 def get_customer_reviews():
-	repost_entries()
 	return frappe.get_all('Customer Review',  filters={
         'show_in_website': 1
     }, fields=['customer_name', 'content', 'rating', 'customer_image'])
